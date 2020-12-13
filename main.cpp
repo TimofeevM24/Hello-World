@@ -30,27 +30,27 @@ int main()
 	std::setlocale(LC_ALL, "ru");
 
 	std::size_t dim;
-	std::cout << "Ââåäèòå ðàçìåðíîñòü: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ: ";
 	while (!(std::cin >> dim))
 	{
 		std::cin.clear();
 		while (!std::isspace(std::cin.get()));
-		std::cout << "Ââåäèòå ðàçìåðíîñòü: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ: ";
 	} 
 
 	std::vector<float> vec(dim);
 	std::vector<float> mat(dim * dim);
 
-	std::cout << "Ââåäèòå ìàòðèöó " << dim << "x" << dim << ":\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñƒ " << dim << "x" << dim << ":\n";
 	for (std::size_t i = 0; i < dim * dim; i++)
 		read_float(mat[i]);
 
-	std::cout << "Ââåäèòå âåêòîð:\n";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÐºÑ‚Ð¾Ñ€:\n";
 	for (std::size_t i = 0; i < dim; i++)
 		read_float(vec[i]);
 
 	std::vector<float> res = mv_mult(mat, vec);
-	std::cout << "Ïîëó÷åííûé âåêòîð:\n";
+	std::cout << "ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð½Ñ‹Ð¹ Ð²ÐµÐºÑ‚Ð¾Ñ€:\n";
 	for (std::size_t i = 0; i < res.size(); i++)
 		std::cout << res[i] << '\n';
 
